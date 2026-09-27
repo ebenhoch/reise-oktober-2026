@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reisevergleich Oktober 2026</title>
+  <meta name="description" content="Unterkunftsvergleich für 15.–21. Oktober 2026: Lesachtal, Ligurien und Frankreich.">
+  <style>
+    :root {
+      --bg: #f6f7f8;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --line: #d9dee5;
+      --accent: #2f6f5e;
+      --accent-soft: #e8f2ee;
+      --warn: #8a5a00;
+      --warn-soft: #fff6dd;
+      --shadow: 0 8px 24px rgba(24, 39, 58, 0.08);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eef5f2, #ffffff);
+      border-bottom: 1px solid var(--line);
+      padding: 44px 0 30px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .facts {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(24, 39, 58, 0.04);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246,247,248,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+
+    nav .wrap::-webkit-scrollbar { display: none; }
+
+    nav a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    main { padding: 28px 0 56px; }
+
+    section {
+      margin: 0 0 34px;
+      scroll-margin-top: 76px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 4px 0 0;
+    }
+
+    .notice {
+      background: var(--warn-soft);
+      border: 1px solid #ead29a;
+      color: #5f4308;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin: 0 0 16px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f4f2;
+      font-size: 0.9rem;
+      color: #43504b;
+      position: sticky;
+      top: 0;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .cards {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card .meta {
+      margin: 10px 0 12px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .button.secondary {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .rank {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 4px 8px;
+      margin-bottom: 9px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 24px 0 40px;
+    }
+
+    @media (max-width: 860px) {
+      .cards { grid-template-columns: 1fr; }
+      header { padding-top: 30px; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 20px, 1120px); }
+      .facts { gap: 8px; }
+      .pill { font-size: 0.88rem; padding: 7px 10px; }
+      main { padding-top: 20px; }
+      th, td { padding: 11px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Reisevergleich Oktober 2026</h1>
+      <p class="subtitle">Unterkünfte für Doris &amp; mich – Lesachtal, Ligurien und Frankreich</p>
+      <div class="facts">
+        <span class="pill">15.–21. Oktober 2026</span>
+        <span class="pill">2 Personen + 1 Hund</span>
+        <span class="pill">Ziel: ca. 150–200 € / Nacht</span>
+        <span class="pill">Restaurant im Haus bevorzugt</span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#lesachtal">Lesachtal</a>
+      <a href="#ligurien">Ligurien</a>
+      <a href="#frankreich">Frankreich</a>
+      <a href="#hinweise">Hinweise</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <section id="lesachtal">
+      <div class="section-head">
+        <div>
+          <h2>1. Lesachtal</h2>
+          <p class="section-note">Ruhiges Alpental in Kärnten/Osttirol, touristisch erschlossen, aber nicht überlaufen.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unterkunft</th>
+              <th>Hund</th>
+              <th>Restaurant / Essen</th>
+              <th>Preis grob</th>
+              <th>Einschätzung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.berghotel-lesachtal.at/" target="_blank" rel="noopener">Das kleine Berghotel</a></td>
+              <td>Ja, ca. 15 € / Nacht</td>
+              <td>Halbpension, Hund darf laut Haus in den Gastraum</td>
+              <td>ca. 135–170 € / Nacht</td>
+              <td>Sehr passend</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.wanderniki.at/" target="_blank" rel="noopener">Alpenhotel Wanderniki</a></td>
+              <td>Ja, ca. 15 € / Nacht</td>
+              <td>Halbpension, eigener Bereich mit Hund</td>
+              <td>ca. 150–195 € / Nacht</td>
+              <td>Sehr passend</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.lesachtalerhof.at/" target="_blank" rel="noopener">Lesachtalerhof</a></td>
+              <td>Ja, gegen Aufpreis</td>
+              <td>Küche auf Anfrage</td>
+              <td>voraussichtlich unter 200 €</td>
+              <td>Interessant</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.paternwirt.at/" target="_blank" rel="noopener">Der Paternwirt</a></td>
+              <td>Ja</td>
+              <td>Eigenes Restaurant</td>
+              <td>eher über 200 €</td>
+              <td>Nur mit Angebot</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="rank">Favorit</span>
+          <h3>Das kleine Berghotel</h3>
+          <p>Preislich attraktiv, Halbpension inklusive und für einen Urlaub mit Hund besonders unkompliziert.</p>
+          <div class="meta">Rechnerischer Richtwert: etwa 135 € pro Nacht für 2 Personen + Hund, zzgl. Ortstaxe.</div>
+          <a class="button" href="https://www.berghotel-lesachtal.at/" target="_blank" rel="noopener">Hotel öffnen</a>
+        </article>
+
+        <article class="card">
+          <span class="rank">Alternative</span>
+          <h3>Alpenhotel Wanderniki</h3>
+          <p>Etwas teurer, aber noch im Zielbudget. Halbpension und hundefreundliche Zimmer.</p>
+          <a class="button secondary" href="https://www.wanderniki.at/" target="_blank" rel="noopener">Hotel öffnen</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="ligurien">
+      <div class="section-head">
+        <div>
+          <h2>2. Ligurien – ähnlich wie Levanto</h2>
+          <p class="section-note">Bonassola, Framura und Deiva Marina als ruhigere Alternativen in derselben Küstenregion.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unterkunft</th>
+              <th>Ort</th>
+              <th>Hund</th>
+              <th>Restaurant</th>
+              <th>Preis grob</th>
+              <th>Einschätzung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.clelia.it/de/" target="_blank" rel="noopener">Hotel Clelia</a></td>
+              <td>Deiva Marina</td>
+              <td>Ja, ca. 8 € / Tag</td>
+              <td>Ja, bis Anfang November täglich abends</td>
+              <td>ca. 100–160 €</td>
+              <td>Sehr interessant</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.booking.com/hotel/it/meri.de.html" target="_blank" rel="noopener">Meri 1956</a></td>
+              <td>Framura</td>
+              <td>Ja</td>
+              <td>Ja</td>
+              <td>voraussichtlich &lt; 200 €</td>
+              <td>Sehr interessant</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.agriturismolafocedelprato.it/" target="_blank" rel="noopener">La Foce del Prato</a></td>
+              <td>Framura</td>
+              <td>Ja, ggf. Gebühr</td>
+              <td>Ja, abends</td>
+              <td>ca. 110–150 €</td>
+              <td>Interessant</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.booking.com/hotel/it/hotelpensionemoderna.de.html" target="_blank" rel="noopener">Pensione Moderna</a></td>
+              <td>Bonassola</td>
+              <td>Ja, kostenlos auf Anfrage</td>
+              <td>Saisonal – im Oktober unsicher</td>
+              <td>ca. 80–120 €</td>
+              <td>Eher streichen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="rank">Favorit</span>
+          <h3>Hotel Clelia, Deiva Marina</h3>
+          <p>Gute Kombination aus Meer, kleinem Ort, Restaurant im Haus und akzeptablem Preisniveau.</p>
+          <a class="button" href="https://www.clelia.it/de/" target="_blank" rel="noopener">Hotel öffnen</a>
+        </article>
+
+        <article class="card">
+          <span class="rank">Klein & ruhig</span>
+          <h3>Meri 1956, Framura</h3>
+          <p>Kleines Haus mit Restaurant, ruhiger als ein klassisches Küstenhotel und nah an Levanto/Bonassola.</p>
+          <a class="button secondary" href="https://www.booking.com/hotel/it/meri.de.html" target="_blank" rel="noopener">Ansehen</a>
+        </article>
+
+        <article class="card">
+          <span class="rank">Agriturismo</span>
+          <h3>La Foce del Prato</h3>
+          <p>Rustikaler und ländlicher, mit ligurischer Küche und ruhiger Lage oberhalb von Framura.</p>
+          <a class="button secondary" href="https://www.agriturismolafocedelprato.it/" target="_blank" rel="noopener">Ansehen</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="frankreich">
+      <div class="section-head">
+        <div>
+          <h2>3. Frankreich – Alternativen zu Chez Gervais</h2>
+          <p class="section-note">Umgebung Vallée de la Loue / Ornans / Amancey.</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        Chez Gervais in Chenecey-Buillon hat vom 12.–21. Oktober 2026 Betriebsferien.
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unterkunft</th>
+              <th>Ort</th>
+              <th>Hund</th>
+              <th>Restaurant</th>
+              <th>Preis grob</th>
+              <th>Einschätzung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://hotel-lacascade.fr/fr/homepage/" target="_blank" rel="noopener">La Cascade</a></td>
+              <td>Mouthier-Haute-Pierre</td>
+              <td>Ja</td>
+              <td>Ja, täglich</td>
+              <td>ca. 100–150 €</td>
+              <td>Sehr passend</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.lechampdeslys.com/" target="_blank" rel="noopener">Le Champ des Lys</a></td>
+              <td>Amancey</td>
+              <td>Ja</td>
+              <td>Ja, ganzjährig</td>
+              <td>ca. 70–120 €</td>
+              <td>Sehr passend</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.booking.com/hotel/fr/la-table-de-gustave.fr.html" target="_blank" rel="noopener">La Table de Gustave</a></td>
+              <td>Ornans</td>
+              <td>Ja</td>
+              <td>Ja</td>
+              <td>ca. 105–150 €</td>
+              <td>Sehr passend</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.booking.com/hotel/fr/de-la-vallee-ornans.html" target="_blank" rel="noopener">Hôtel de la Vallée</a></td>
+              <td>Ornans</td>
+              <td>Auf Anfrage</td>
+              <td>Ja</td>
+              <td>ca. 90–130 €</td>
+              <td>Interessant</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.hotel-des-bains.fr/" target="_blank" rel="noopener">Grand Hôtel des Bains</a></td>
+              <td>Salins-les-Bains</td>
+              <td>Ja</td>
+              <td>Ja</td>
+              <td>ca. 125–170 €</td>
+              <td>Etwas städtischer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="rank">Favorit</span>
+          <h3>La Cascade</h3>
+          <p>Vom Charakter vermutlich am ähnlichsten zu Chez Gervais: kleines Hotel, starke Naturlage an der Loue und Restaurant im Haus.</p>
+          <a class="button" href="https://hotel-lacascade.fr/fr/homepage/" target="_blank" rel="noopener">Hotel öffnen</a>
+        </article>
+
+        <article class="card">
+          <span class="rank">Preis-Leistung</span>
+          <h3>Le Champ des Lys</h3>
+          <p>Ländlich, hundefreundlich und voraussichtlich deutlich innerhalb des Budgets.</p>
+          <a class="button secondary" href="https://www.lechampdeslys.com/" target="_blank" rel="noopener">Hotel öffnen</a>
+        </article>
+
+        <article class="card">
+          <span class="rank">Ort & Infrastruktur</span>
+          <h3>La Table de Gustave</h3>
+          <p>Gute Option, wenn ihr lieber in Ornans wohnt und weitere Restaurants und Sehenswürdigkeiten zu Fuß erreichen möchtet.</p>
+          <a class="button secondary" href="https://www.booking.com/hotel/fr/la-table-de-gustave.fr.html" target="_blank" rel="noopener">Ansehen</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="hinweise">
+      <div class="section-head">
+        <div>
+          <h2>Hinweise</h2>
+        </div>
+      </div>
+      <div class="card">
+        <p><strong>Preise:</strong> Die genannten Werte sind Richtwerte aus der bisherigen Recherche und keine verbindlichen Angebote für exakt 15.–21.10.2026.</p>
+        <p><strong>Vor Buchung prüfen:</strong> tatsächliche Verfügbarkeit, Gesamtpreis für 6 Nächte, Hundezuschlag, Frühstück/Halbpension, Restaurantöffnung und Stornierungsbedingungen.</p>
+        <p><strong>Bedienung:</strong> Alle Hotelnamen und Buttons sind anklickbar und öffnen die jeweilige Website in einem neuen Tab.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Reiseübersicht – Stand der bisherigen Recherche.
+    </div>
+  </footer>
+</body>
+</html>
